@@ -118,5 +118,43 @@
 # where state = "maharashtra" and (credit_score > 700 OR annual_income > 100000);
 # select * from accounts
 # where (account_type = "Savings" OR account_type = "current") AND balance > 200000;
- select * from loans
- where loan_status="active" and (loan_type="home loan" or loan_type= "Business loan"); 
+# select * from loans
+# where loan_status="active" and (loan_type="home loan" or loan_type= "Business loan"); 
+-----------------------------------------------------------------------------------------------
+*************************BETWEEN QUERIES*****************************
+#  select * from loans
+#  where Loan_amount between 200000 and 1000000; 
+# select * from accounts
+# where balance between 50000 and 200000;
+# select * from employees
+# where salary between 90000 and 200000;
+# select customer_id, first_name, last_name, credit_score
+# from customers
+# where credit_score between 650 and 750;
+# select loan_id, customer_id, loan_type, interest_rate
+# from loans
+# where interest_rate between 8 and 10;
+# select transaction_id, account_id, transaction_date, amount
+# from transactions
+# where transaction_date between "2026-04-01" and "2026-04-30";
+# select loan_id, customer_id, loan_type, start_date
+# from loans
+# where start_date between "2022-01-01" and "2022-12-31";
+# select * from accounts
+# where status="active" and balance between 100000 and 400000;
+# select * from accounts
+# where balance between 100000 and 500000;
+# select * from customers
+# where credit_score between 700 and 800;
+# select * from loans
+# where loan_amount between 300000 and 5000000;
+# select * from cards
+# where issue_date between "2021-01-01" and "2023-12-31";
+# select employee_id, employee_name, job_title, salary
+# from employees
+# where salary between 900000 and 160000;
+# select * from transactions
+# where amount between 30000 and 130000;
+# select account_id, customer_id, account_type, balance
+# from accounts
+# where balance between 100000 and 500000;
