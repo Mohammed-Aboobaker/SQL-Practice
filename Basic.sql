@@ -158,3 +158,52 @@
 # select account_id, customer_id, account_type, balance
 # from accounts
 # where balance between 100000 and 500000;
+-----------------------------------------------------------------------------------------------
+*************************IN and NESTED QUERIES*****************************
+# select * from customers
+# where city in ("kolhapur","bangaluru");
+# select * from customers
+# where state in ("karnataka", "Delhi");
+# select * from loans
+# where loan_status in ("active","closed");
+# select * from employees
+# where job_title in ("relationship manager", "branch manager");
+# select * from branches
+# where city in ("Pune","delhi","Mumbai");
+# select * from transactions
+# where channel in ("UPI","ATM");
+# select * from customers
+# where credit_score in (742,790,805);
+# select * from customers
+# where  city not in ("pune","mumbai","Delhi");	
+# select * from customers
+# where customer_ID in (select customer_id from loans);
+# select * from customers
+# where customer_id not in (select customer_id from loans);
+# select * from customers
+# where branch_id in (select branch_id from branches where state="Maharashtra");
+# select * from employees where job_title="branch manager" and branch_id in (select branch_id from employees where salary >140000);
+# select * from customers where customer_ID in (101,102,103) and city not in ("pune"); 
+# select * from transactions where account_id in(select account_id from accounts where account_type="Current");
+# select * from cards where customer_id in(select customer_id from customers where credit_score>750);
+# select * from accounts where account_id in (select account_id from transactions where amount>100000);
+# select * from branches where branch_id in (select branch_id from employees where salary > 100000);
+# select * from customers 
+# where customer_id in (select customer_id from loans) AND customer_id in (select customer_id from cards);
+# select * from loans
+# where customer_id in (select customer_id from branches where branch_id in(1,2));
+# select * from customers where customer_id not in (select customer_id from accounts where status="Dormant");
+# select * from cards where customer_id in (select customer_id from customers order by annual_income desc lIMIT 3);
+-----------------------------------------------------------------------------------------------
+*************************LIKE QUERIES*****************************
+#  select * from customers where first_name like "A%";
+# select * from customers where last_name like "A%";
+# select * from customers where city like "%U%";
+# select * from branches where branch_name like "B%";
+# select * from customers where first_name like "%V";
+# select * from loans where loan_type like "%loan%";
+# select * from employees where job_title like "%manager%";
+# select * from customers where last_name like "S%";
+# select * from accounts where account_type like "%s%";
+# select * from customers where first_name like "_____";
+# select * from customers where city like "____";
