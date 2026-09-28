@@ -252,3 +252,6 @@
 # select * from customers 
 # where customer_id in (select customer_id from loans) and 
 # customer_id in(select customer_id from accounts where status="ACTIVE") and gender in("F");
+# select * from customers 
+# where customer_id in (select customer_id from cards) and customer_id in(select customer_id from loans 
+# where loan_status="active") and city in ("Pune", "Mumbai", "Bengaluru");
