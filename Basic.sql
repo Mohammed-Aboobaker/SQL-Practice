@@ -207,3 +207,48 @@
 # select * from accounts where account_type like "%s%";
 # select * from customers where first_name like "_____";
 # select * from customers where city like "____";
+-----------------------------------------------------------------------------------------------
+*************************NESTED SUB QUERIES*****************************
+# select * from customers 
+# where customer_id in (select customer_id from accounts where status="Active");
+# select * from customers 
+# where branch_id in (select branch_id from branches where state="Maharashtra" and city <> "Kolhapur");
+# select * from cards
+# where customer_id in (select customer_id from customers where annual_income between 700000 and 1200000);
+# select * from accounts 
+# where branch_id in (select branch_id from branches where state = "Maharashtra" OR state="Delhi") and status="active";
+# select * from customers 
+# where state in("Maharashtra", "karnataka") and customer_id in (select customer_id from loans);
+# select * from customers 
+# where customer_id in (select customer_id from accounts where branch_id in (select branch_id from branches where state="Maharashtra" or state="Karnataka"));
+# select * from loans
+# where customer_id in (select customer_id from branches where branch_id in (select branch_id from employees where job_title="Branch manager"));
+# select * from customers
+# where customer_id in (select customer_id from accounts where account_type="savings" and customer_id in
+# (select customer_id from loans where loan_type="home loan" or loan_type="Car Loan"));
+# select * from customers
+# where customer_id in (select customer_id from accounts where account_type="savings") and customer_id in
+# (select customer_id from loans where loan_type="home loan" or loan_type="Car Loan");
+# select * from cards 
+# where customer_id in (select customer_id from customers where branch_id in
+# (select branch_id from branches where branch_id in (1,2,3)));
+# select* from employees
+# where branch_id in
+# (select branch_id from customers where credit_score between 700 and 800 and annual_income>900000); 
+# select*from customers 
+# where customer_id in (select customer_id from accounts where account_id in
+# (select account_id from transactions where channel in ("NEFT","UPI")));
+# select * from loans
+# where customer_id in(select customer_id from customers where state in ("MAHARASHTRA", "DELHI")) and
+# customer_id in (select customer_id from cards where status="ACTIVE");
+# select * from accounts
+# where customer_id in (select customer_id from branches where branch_id in (1,2,3)) OR customer_id in
+# (select customer_id from customers where credit_score between 700 and 800);
+# select * from branches 
+# where branch_id in (select branch_id from customers where customer_id in 
+# (select customer_id from loans where interest_rate between 8 and 10)); 
+# select * from customers 
+# where customer_id in (select customer_id from accounts) and customer_id in(select customer_id from cards) and state in ("MAHARASHTRA");
+# select * from customers 
+# where customer_id in (select customer_id from loans) and 
+# customer_id in(select customer_id from accounts where status="ACTIVE") and gender in("F");
