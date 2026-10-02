@@ -255,3 +255,40 @@
 # select * from customers 
 # where customer_id in (select customer_id from cards) and customer_id in(select customer_id from loans 
 # where loan_status="active") and city in ("Pune", "Mumbai", "Bengaluru");
+-----------------------------------------------------------------------------------------------
+*************************AGGREGATE FUNCTIONS(SUM,MIN,MAX,AVG,COUNT), WHERE, GROUP BY, HAVING, ORDER BY*****************************
+#select count(*) from customers; 
+#select count(*) from accounts;
+# select sum(balance) from accounts;
+# select sum(loan_amount) from loans;
+# select avg(credit_score) from customers;
+# select avg(annual_income) from customers;
+# select max(annual_income) from customers;
+# select max(balance) from accounts;
+# select count(*) from transactions;
+# select sum(salary) from employees;
+# select max(salary) from employees;
+# select count(credit_score) from customers;
+# select min(interest_rate) from loans;
+# select city, count(*) as total_customers from customers group by city;
+# select state, avg(annual_income) from customers group by state;
+# select branch_id, sum(balance) as total_balance from accounts group by branch_id;
+# select account_type, count(*) from accounts group by account_type;
+# select loan_type, sum(loan_amount) from loans group by loan_type;	
+# select job_title, avg(salary) from employees group by job_title;
+# select channel, count(*) from transactions group by channel;
+# select city, count(*) as total_customers from customers group by city having count(*)>2; (having always after group by condition)
+# select branch_id, sum(balance) from accounts group by branch_id having sum(balance)>300000;
+#select loan_type, avg(interest_rate) from loans group by loan_type having avg(interest_rate)>10;#
+#select city, avg(annual_income) from customers group by city having avg(annual_income)>700000;
+#select loan_status, count(*) from loans group by loan_status;
+#select branch_id, max(salary) from employees group by branch_id;
+#select branch_id, count(*) as total_accounts from accounts where status="active" group by branch_id;
+#select job_title, count(*) as total_employees from employees group by job_title having count(*)<4;
+#select channel, sum(amount) from transactions where transaction_type="deposit" group by channel;
+#select state, count(*) as total_customer from customers group by state having count(*)<=2;
+#select branch_id, max(salary) from employees group by branch_id;
+#select card_type, count(*) as total_cards from cards where status="ACTIVE" group by card_type;
+#select state, count(*) as total_customers from customers group by state having count(*)<=2;
+#select branch_id, count(*) as total_customers from customers group by branch_id order by total_customers desc;
+
